@@ -27,11 +27,22 @@ cd cleaning_service
 ./mvnw spring-boot:run
 ```
 ---
-**Note:** Set your PostgreSQL credentials via environment variables:
-```bash
+**Note:** Set your PostgreSQL credentials via environment variables **before running the application**:
+
+For **Windows (PowerShell)**:
+```powershell
+$env:DB_USERNAME="db_username"
+$env:DB_PASSWORD="db_password"
+.\mvnw spring-boot:run
+```
+
+For **macOS/Linux (bash)**:
+```
 export DB_USERNAME=db_username
 export DB_PASSWORD=db_password
+./mvnw spring-boot:run
 ```
+
 ## Running Tests
 
 ```bash
@@ -65,6 +76,7 @@ http://localhost:8080/swagger-ui.html
 | GET    | `/api/v1/bookings/{id}`        | Get booking details                  |
 | DELETE | `/api/v1/bookings/{id}`        | Delete a booking                     |
 | GET    | `/api/v1/cleaners/available`   | Get available cleaners (raw)         |
+
 ---
 
 ## Technologies Used
